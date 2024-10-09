@@ -37,7 +37,7 @@ static inline const struct vdso_data *__get_datapage(void)
 	const struct vdso_data *ret;
 	/*
 	 * This simply puts &_vdso_data into ret. The reason why we don't use
-	 * `ret = &_vdso_data` is that the compiler tends to optimise this in a
+	 * "ret = &_vdso_data" is that the compiler tends to optimise this in a
 	 * very suboptimal way: instead of keeping &_vdso_data in a register,
 	 * it goes through a relocation almost every time _vdso_data must be
 	 * accessed (even in subfunctions). This is both time and space
